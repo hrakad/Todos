@@ -18,6 +18,11 @@ export default class Main extends React.Component {
     tasks.push({ task, isCompleted: false });
     this.setState({ tasks: tasks })
   }
+  toggleTask = (taskId) => {
+    const taskItem = tasks[taskId];
+    taskItem.isCompleted = !taskItem.isCompleted;
+    this.setState({ task: tasks });
+  }
   deleteTask = (taskId) => {
     tasks.splice(taskId, 1)
     this.setState({ tasks })
@@ -37,6 +42,7 @@ export default class Main extends React.Component {
           <TaskList tasks={this.state.tasks}
             deleteTask={this.deleteTask}
             editTask={this.editTask}
+            toggleTask={this.toggleTask}
           />
         </div>
       </div>)
