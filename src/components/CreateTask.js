@@ -24,7 +24,7 @@ export default class CreateTask extends Component {
           onChange={this.handleChange}
           autoFocus>
         </input>
-        <button type="submit">Add</button>
+        <button className="add" type="submit">Add</button>
       </form>
     );
 
